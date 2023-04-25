@@ -1,0 +1,33 @@
+.container {
+  min-height: 100vh;
+}
+.left {
+  display: hidden;
+  padding: 6.6rem 1rem 6.6rem 1rem;
+  background-color: #fbfbfb;
+}
+.leftLogo {
+  margin-bottom: 8.75rem;
+}
+.right {
+  padding: 6.6rem 1rem 6.6rem 1rem;
+}
+.imageWrapper {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+}
+
+@media (min-width: 992px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .left {
+    display: block;
+    padding: 6.6rem 6rem 6.6rem 6rem;
+  }
+  .right {
+    padding: 14rem 6rem 6.6rem 6rem;
+  }
+}
