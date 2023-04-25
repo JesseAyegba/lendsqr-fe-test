@@ -1,0 +1,27 @@
+$dash-bg: #fbfbfb;
+
+.container {
+  height: 100vh;
+  display: flex;
+}
+.sidebarWrapper {
+  flex: 1;
+  height: 100%;
+  max-width: 17.7rem;
+}
+.navWrapper {
+  height: 6.25rem;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+.contentWrapper {
+  flex: 1;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: $dash-bg;
+}
+.main {
+  padding: 3.75rem 3.75rem;
+}

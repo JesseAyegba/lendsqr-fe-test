@@ -1,0 +1,20 @@
+.container {
+  height: 100%;
+  background-color: white;
+}
+.logoWrapper {
+  height: 6.25rem;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding-left: 1.875rem;
+}
+.linksWrapper {
+  height: calc(100% - 6.25rem);
+  overflow-y: scroll;
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem 0 0 0;
+}

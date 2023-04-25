@@ -1,0 +1,17 @@
+.btn {
+  border: none;
+  display: block;
+  width: 100%;
+  background-color: white;
+  cursor: pointer;
+}
+.container {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  gap: 0.645rem;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0 1.875rem;
+  color: #213f7d;
+}

@@ -1,0 +1,37 @@
+$cyan: #39cdcc;
+.container {
+  height: 100%;
+  padding: 0 3.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #213f7d;
+}
+.searchWrapper {
+  width: 100%;
+  max-width: 25rem;
+  height: 2.5rem;
+  display: flex;
+}
+.input {
+  flex: 1;
+}
+.btn {
+  flex: 1;
+  max-width: 3.5rem;
+  border: none;
+  background-color: $cyan;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  cursor: pointer;
+}
+.right {
+  display: flex;
+  gap: 3.125rem;
+  align-items: center;
+}
+.link {
+  color: #213f7d;
+}

@@ -1,0 +1,8 @@
+.header {
+  margin-bottom: 2.5rem;
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.625rem;
+}

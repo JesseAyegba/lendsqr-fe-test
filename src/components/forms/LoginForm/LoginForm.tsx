@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import styles from "./LoginForm.module.scss";
+import Link from "next/link";
+import ButtonLoader from "@/components/shared/ButtonLoader/ButtonLoader";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginFormSchema } from "./LoginForm.schema";
 import { TextInput } from "@mantine/core";
 import { inputStyles } from "@/utils/other/inputStyles";
-import Link from "next/link";
-import ButtonLoader from "@/components/shared/ButtonLoader/ButtonLoader";
+import { useRouter } from "next/router";
+import { avenir } from "@/pages/_app";
 
 interface FormInputs {
   email: string;
@@ -14,6 +16,7 @@ interface FormInputs {
 }
 
 const LoginForm: React.FC = () => {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const {
@@ -24,19 +27,26 @@ const LoginForm: React.FC = () => {
     mode: "onBlur",
     resolver: yupResolver(LoginFormSchema),
   });
+  const fontStyle = {
+    fontFamily: avenir.style.fontFamily,
+  };
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {
       setLoading(true);
       setTimeout(() => {
-        setLoading(false);
+        router.push("/users");
       }, 3000);
     } catch {}
   };
   return (
     <div className={styles.container}>
-      <h1 className={styles.header}>Welcome!</h1>
-      <p className={styles.body}>Enter details to login.</p>
+      <h1 className={styles.header} style={fontStyle}>
+        Welcome!
+      </h1>
+      <p className={styles.body} style={fontStyle}>
+        Enter details to login.
+      </p>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.wrapper}>
@@ -46,7 +56,11 @@ const LoginForm: React.FC = () => {
               styles={inputStyles}
               {...register("email")}
               error={
-                errors.email && <p className="error">{errors.email.message}</p>
+                errors.email && (
+                  <p style={fontStyle} className="error">
+                    {errors.email.message}
+                  </p>
+                )
               }
             />
           </div>
@@ -65,7 +79,7 @@ const LoginForm: React.FC = () => {
                     }}
                     className={styles.hideBtn}
                   >
-                    <span>HIDE</span>
+                    <span style={fontStyle}>HIDE</span>
                   </button>
                 ) : (
                   <button
@@ -75,18 +89,20 @@ const LoginForm: React.FC = () => {
                     }}
                     className={styles.hideBtn}
                   >
-                    <span>SHOW</span>
+                    <span style={fontStyle}>SHOW</span>
                   </button>
                 )
               }
               error={
                 errors.password && (
-                  <p className="error">{errors.password.message}</p>
+                  <p style={fontStyle} className="error">
+                    {errors.password.message}
+                  </p>
                 )
               }
             />
           </div>
-          <Link className={styles.link} href="/">
+          <Link className={styles.link} href="/" style={fontStyle}>
             FORGOT PASSWORD?
           </Link>
           <button
@@ -96,7 +112,7 @@ const LoginForm: React.FC = () => {
             disabled={loading}
             className={styles.submitBtn}
           >
-            {loading ? <ButtonLoader /> : <span>LOG IN</span>}
+            {loading ? <ButtonLoader /> : <span style={fontStyle}>LOG IN</span>}
           </button>
         </div>
       </form>

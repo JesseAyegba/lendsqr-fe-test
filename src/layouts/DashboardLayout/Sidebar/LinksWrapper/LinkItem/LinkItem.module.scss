@@ -1,0 +1,18 @@
+.link {
+  text-decoration: none;
+}
+.container {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  gap: 0.645rem;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0 1.875rem;
+  color: #7b8db1;
+}
+.containerActive {
+  background-color: #f3fcfc;
+  border-left: 3px #39cdcc solid;
+  color: #213f7d;
+}

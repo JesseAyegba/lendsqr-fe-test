@@ -1,0 +1,19 @@
+.container {
+  padding: 1.25rem 1.875rem;
+  background-color: white;
+  display: grid;
+  gap: 0.875rem;
+  border-radius: 0.25rem;
+  border: 1px solid #f2f2f6;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+}
+.title {
+  color: #545f7d;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.value {
+  color: #213f7d;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
