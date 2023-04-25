@@ -1,4 +1,4 @@
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, act } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import LoginForm from "@/components/forms/LoginForm/LoginForm";
 
@@ -18,5 +18,24 @@ describe("LoginForm", () => {
 
     expect(await findByText("Email is required")).toBeInTheDocument();
     expect(await findByText("Password is required")).toBeInTheDocument();
+  });
+
+  test("Ensures submit button is disabled when form is submitting", async () => {
+    const { findByText, getByText, findByPlaceholderText } = render(
+      <LoginForm />
+    );
+    const emailInput = await findByPlaceholderText("Email");
+    const passwordInput = await findByPlaceholderText("Password");
+    const submitButton = await findByText("LOG IN");
+
+    fireEvent.change(emailInput, { target: { value: "testing@gmail.com" } });
+    fireEvent.change(passwordInput, { target: { value: "testing123" } });
+
+    act(async () => {
+      fireEvent.click(submitButton);
+
+      expect(await findByText("LOG IN")).toBeDisabled();
+      expect(await findByText("LOG IN")).toHaveStyle("cursor: not-allowed");
+    });
   });
 });
