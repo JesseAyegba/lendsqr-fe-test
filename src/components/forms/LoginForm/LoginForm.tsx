@@ -6,6 +6,7 @@ import { LoginFormSchema } from "./LoginForm.schema";
 import { TextInput } from "@mantine/core";
 import { inputStyles } from "@/utils/other/inputStyles";
 import Link from "next/link";
+import ButtonLoader from "@/components/shared/ButtonLoader/ButtonLoader";
 
 interface FormInputs {
   email: string;
@@ -14,6 +15,7 @@ interface FormInputs {
 
 const LoginForm: React.FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
@@ -25,6 +27,10 @@ const LoginForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
     } catch {}
   };
   return (
@@ -83,8 +89,14 @@ const LoginForm: React.FC = () => {
           <Link className={styles.link} href="/">
             FORGOT PASSWORD?
           </Link>
-          <button className={styles.submitBtn}>
-            <span>LOG IN</span>
+          <button
+            style={{
+              cursor: loading ? "not-allowed" : "pointer",
+            }}
+            disabled={loading}
+            className={styles.submitBtn}
+          >
+            {loading ? <ButtonLoader /> : <span>LOG IN</span>}
           </button>
         </div>
       </form>
