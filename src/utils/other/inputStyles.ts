@@ -7,7 +7,7 @@ export const inputStyles = {
     height: "3.125rem",
 
     "&:focus": {
-      border: "2px #213F7D solid",
+      border: "2px #39cdcc solid",
     },
   },
   //   invalid: {
