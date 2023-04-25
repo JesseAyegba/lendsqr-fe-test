@@ -30,6 +30,20 @@ yarn dev
 
 7. The application should be running on http://localhost:3000
 
+## Testing
+
+Testing is a big part of this project and as such, tests will be run during and after the development of any new feature. This project utilzes jest and the react-testing-library for all of its unit tests.
+
+To run tests:
+
+1. Use the command
+
+```
+yarn test
+```
+
+This assumes that you have followed the yarn installation guide above.
+
 ## Sidenotes
 
-1. Unit tests will run in the local/development environment before code is committed.
+1. The deployment of this project can be done as soon as the first set of tests pass.
