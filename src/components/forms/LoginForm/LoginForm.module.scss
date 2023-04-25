@@ -1,0 +1,47 @@
+$cyan: #39cdcc;
+$brand-blue: #213f7d;
+$text-blue: #545f7d;
+.container {
+  max-width: 28rem;
+}
+.header {
+  color: $brand-blue;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.625rem;
+}
+.body {
+  color: $text-blue;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 3.75rem;
+}
+.wrapper {
+  display: grid;
+  gap: 1.5rem;
+}
+.hideBtn {
+  border: none;
+  background: none;
+  margin-right: 2rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $cyan;
+}
+.link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: $cyan;
+}
+.submitBtn {
+  background: $cyan;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  height: 3rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
