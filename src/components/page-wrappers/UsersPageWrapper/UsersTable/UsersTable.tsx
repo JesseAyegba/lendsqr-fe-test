@@ -30,7 +30,7 @@ const UsersTable: React.FC = () => {
       }
     };
     fetchUsers();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={styles.container}>
@@ -58,7 +58,7 @@ const UsersTable: React.FC = () => {
             const status =
               new Date(user.createdAt) > new Date() ? "Pending" : "Active";
             return (
-              <tr>
+              <tr key={user.id}>
                 <td className={styles.body}>Lendsqr</td>
                 <td className={styles.body}>
                   {user.profile.firstName} {user.profile.lastName}
