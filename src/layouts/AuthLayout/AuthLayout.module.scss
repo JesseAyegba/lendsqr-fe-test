@@ -2,7 +2,7 @@
   min-height: 100vh;
 }
 .left {
-  display: hidden;
+  display: none;
   padding: 6.6rem 1rem 6.6rem 1rem;
   background-color: #fbfbfb;
 }
@@ -11,6 +11,8 @@
 }
 .right {
   padding: 6.6rem 1rem 6.6rem 1rem;
+  display: flex;
+  justify-content: center;
 }
 .imageWrapper {
   width: 100%;
@@ -28,6 +30,7 @@
     padding: 6.6rem 6rem 6.6rem 6rem;
   }
   .right {
+    display: block;
     padding: 14rem 6rem 6.6rem 6rem;
   }
 }
