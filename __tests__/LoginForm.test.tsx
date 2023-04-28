@@ -1,6 +1,9 @@
 import { fireEvent, render, act } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import LoginForm from "@/components/forms/LoginForm/LoginForm";
+import mockRouter from "next-router-mock";
+
+jest.mock("next/router", () => require("next-router-mock"));
 
 describe("LoginForm", () => {
   test("Ensures form renders correctly", async () => {
@@ -31,11 +34,11 @@ describe("LoginForm", () => {
     fireEvent.change(emailInput, { target: { value: "testing@gmail.com" } });
     fireEvent.change(passwordInput, { target: { value: "testing123" } });
 
-    act(async () => {
+    async () => {
       fireEvent.click(submitButton);
 
       expect(await findByText("LOG IN")).toBeDisabled();
       expect(await findByText("LOG IN")).toHaveStyle("cursor: not-allowed");
-    });
+    };
   });
 });
