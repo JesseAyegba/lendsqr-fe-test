@@ -6,6 +6,7 @@ import Users2 from "@/components/illustrations/icons/Users2/Users2";
 import ActiveUsers from "@/components/illustrations/icons/ActiveUsers/ActiveUsers";
 import UsersWithLoans from "@/components/illustrations/icons/UsersWithLoans/UsersWithLoans";
 import UsersWithSavings from "@/components/illustrations/icons/UsersWithSavings/UsersWithSavings";
+import UsersTable from "./UsersTable/UsersTable";
 
 const UsersPageWrapper: React.FC = () => {
   return (
@@ -13,19 +14,24 @@ const UsersPageWrapper: React.FC = () => {
       <div className={styles.header}>
         <SectionHeader text="Users" />
       </div>
-      <div className={styles.cards}>
-        <InfoCard icon={<Users2 />} title="USERS" value="2,453" />
-        <InfoCard icon={<ActiveUsers />} title="ACTIVE USERS" value="2,453" />
-        <InfoCard
-          icon={<UsersWithLoans />}
-          title="USERS WITH LOANS"
-          value="12,453"
-        />
-        <InfoCard
-          icon={<UsersWithSavings />}
-          title="USERS WITH SAVINGS"
-          value="102,453"
-        />
+      <div className={styles.wrapper}>
+        <div className={styles.cards}>
+          <InfoCard icon={<Users2 />} title="USERS" value="2,453" />
+          <InfoCard icon={<ActiveUsers />} title="ACTIVE USERS" value="2,453" />
+          <InfoCard
+            icon={<UsersWithLoans />}
+            title="USERS WITH LOANS"
+            value="12,453"
+          />
+          <InfoCard
+            icon={<UsersWithSavings />}
+            title="USERS WITH SAVINGS"
+            value="102,453"
+          />
+        </div>
+        <div>
+          <UsersTable />
+        </div>
       </div>
     </div>
   );

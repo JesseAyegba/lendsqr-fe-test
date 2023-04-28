@@ -1,0 +1,50 @@
+.container {
+  position: relative;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.status {
+  font-size: 0.875rem;
+  border-radius: 100vh;
+  height: 1.875rem;
+  padding: 0 1rem;
+  display: grid;
+  place-items: center;
+}
+.statusActive {
+  background-color: #f2fdf6;
+  color: #39cd62;
+}
+.statusPending {
+  background-color: #fdf6e4;
+  color: #e9b200;
+}
+.btn {
+  border: none;
+  background-color: white;
+  padding: 0.5rem;
+}
+.dropDown {
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  width: 11.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid #f2f2f6;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+  padding: 1.625rem;
+  display: grid;
+  gap: 1rem;
+}
+.dropDownItem {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.875rem !important;
+  font-weight: 500;
+  cursor: pointer;
+  color: #545f7d !important;
+}

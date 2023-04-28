@@ -1,6 +1,10 @@
 .header {
   margin-bottom: 2.5rem;
 }
+.wrapper {
+  display: grid;
+  gap: 2.5rem;
+}
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

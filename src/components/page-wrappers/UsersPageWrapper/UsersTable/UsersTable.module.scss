@@ -1,0 +1,23 @@
+.container {
+  background-color: white;
+  padding: 1.875rem;
+  border-radius: 0.25rem;
+  border: 1px solid #f2f2f6;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+}
+.header {
+  display: flex;
+  gap: 0.625rem;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #545f7d !important;
+}
+.funnel {
+  margin-top: 0.15rem;
+}
+.body {
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  color: #545f7d !important;
+  //Prevent text from wrapping
+}

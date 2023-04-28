@@ -2,6 +2,8 @@ import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import { MantineProvider } from "@mantine/core";
 import localFont from "@next/font/local";
+import { Provider } from "react-redux";
+import { store } from "@/store/store";
 
 // export const avenir = localFont({
 //   src: "../fonts/avenir/avenir-next-regular.otf",
@@ -37,9 +39,11 @@ export default function App({ Component, pageProps }: AppProps) {
         headings: { fontFamily: "Work Sans, sans-serif" },
       }}
     >
-      <div className={`${avenir.variable} font-sans`}>
-        <Component {...pageProps} />
-      </div>
+      <Provider store={store}>
+        <div className={`${avenir.variable} font-sans`}>
+          <Component {...pageProps} />
+        </div>
+      </Provider>
     </MantineProvider>
   );
 }
