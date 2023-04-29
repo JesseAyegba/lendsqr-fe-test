@@ -38,7 +38,7 @@ const UserDetailsPageWrapper: React.FC = () => {
     return () => {
       dispatch(clearSelectedUser());
     };
-  }, [userId]);
+  }, [userId, dispatch]);
   return (
     <div>
       <section className={styles.section1}>

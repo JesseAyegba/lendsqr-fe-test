@@ -19,7 +19,7 @@ const InfoWrapper: React.FC<Props> = ({ header, data, fourColumnGrid }) => {
       <div className={fourColumnGrid ? styles.wrapper4 : styles.wrapper}>
         {data.map((info) => {
           return (
-            <div>
+            <div key={info.label}>
               <div className={styles.label}>{info.label}</div>
               <div className={styles.value}>{info.value}</div>
             </div>
