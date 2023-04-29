@@ -1,6 +1,9 @@
 import { fireEvent, render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Status from "@/components/page-wrappers/UsersPageWrapper/Status/Status";
+import mockRouter from "next-router-mock";
+
+jest.mock("next/router", () => require("next-router-mock"));
 
 describe("Status", () => {
   test("Ensures component renders correctly", async () => {
