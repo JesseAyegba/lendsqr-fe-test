@@ -4,6 +4,7 @@ import styles from "./Status.module.scss";
 import Eye from "@/components/illustrations/icons/Eye/Eye";
 import BlackListUser from "@/components/illustrations/icons/BlackListUser/BlackListUser";
 import ActivateUser from "@/components/illustrations/icons/ActivateUser/ActivateUser";
+import { useRouter } from "next/router";
 
 interface Props {
   status: string;
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const Status: React.FC<Props> = ({ status, userId }) => {
+  const router = useRouter();
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dropDownRef = useRef<HTMLDivElement>(null);
@@ -62,7 +64,12 @@ const Status: React.FC<Props> = ({ status, userId }) => {
           ref={dropDownRef}
           className={styles.dropDown}
         >
-          <div className={styles.dropDownItem}>
+          <div
+            onClick={() => {
+              router.push(`/users/${userId}`);
+            }}
+            className={styles.dropDownItem}
+          >
             <span>
               <Eye />
             </span>

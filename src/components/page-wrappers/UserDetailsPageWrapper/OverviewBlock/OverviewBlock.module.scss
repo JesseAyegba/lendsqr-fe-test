@@ -1,0 +1,54 @@
+.container {
+  background-color: white;
+  padding: 1.875rem 1.875rem 0 1.875rem;
+  border-radius: 0.25rem;
+  border: 1px solid #f2f2f6;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+}
+.wrapper {
+  display: flex;
+  gap: 1.875rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.userWrapper {
+  display: flex;
+  gap: 1.875rem;
+  align-items: center;
+}
+.tier {
+  padding: 1rem 1.875rem;
+  border-left: 1px solid #dedfe5;
+  border-right: 1px solid #dedfe5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.balance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.grayText {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #545f7d;
+}
+.bank {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #213f7d;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+.link {
+  font-weight: 400;
+  color: black;
+  padding: 0.5rem 2rem;
+}
+.linkActive {
+  color: #39cdcc;
+  border-bottom: 2px solid #39cdcc;
+}

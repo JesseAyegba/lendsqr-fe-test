@@ -26,6 +26,8 @@ const UsersTable: React.FC = () => {
         const res = await getUsers();
         dispatch(setUsers(res.data));
       } catch {
+        // Should use Sentry in production
+        console.log("Failed to fetch users");
       } finally {
       }
     };

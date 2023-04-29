@@ -1,0 +1,26 @@
+.header {
+  color: #213f7d;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.875rem;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1.875rem;
+}
+.wrapper4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.875rem;
+}
+.label {
+  color: #545f7d;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.value {
+  color: #545f7d;
+  font-weight: 500;
+}

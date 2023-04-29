@@ -1,0 +1,51 @@
+.section1 {
+  margin-bottom: 2.5rem;
+}
+.linkWrapper {
+  display: block;
+  max-width: 10rem;
+  margin-bottom: 1.25rem;
+}
+.link {
+  color: #545f7d;
+  display: flex;
+  align-items: center;
+  gap: 0.8125rem;
+}
+.header {
+  display: grid;
+  gap: 1.25rem;
+}
+.btns {
+  display: flex;
+  gap: 1.25rem;
+}
+.btn {
+  width: 10.626rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.btnSuccess {
+  color: #39cdcc;
+  border: 1px solid #39cdcc;
+}
+.btnDanger {
+  color: #e4033b;
+  border: 1px solid #e4033b;
+}
+.overview {
+  margin-bottom: 1.875rem;
+}
+
+@media (min-width: 992px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

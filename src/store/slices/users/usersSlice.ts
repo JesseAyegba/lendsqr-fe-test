@@ -45,10 +45,12 @@ interface User {
 
 interface InitialState {
   data: null | User[];
+  selectedUser?: User | null;
 }
 
 const initialState: InitialState = {
   data: null,
+  selectedUser: null,
 };
 
 const usersSlice = createSlice({
@@ -61,8 +63,15 @@ const usersSlice = createSlice({
     clearUsers: (state) => {
       state.data = null;
     },
+    setSelectedUser: (state, action: PayloadAction<User>) => {
+      state.selectedUser = action.payload;
+    },
+    clearSelectedUser: (state) => {
+      state.selectedUser = null;
+    },
   },
 });
 
-export const { setUsers, clearUsers } = usersSlice.actions;
+export const { setUsers, clearUsers, setSelectedUser, clearSelectedUser } =
+  usersSlice.actions;
 export default usersSlice.reducer;
