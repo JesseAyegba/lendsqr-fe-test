@@ -27,6 +27,7 @@ import Audit from "@/components/illustrations/icons/Audit/Audit";
 import { hideMobileSidebar } from "@/store/slices/mobileSidebar/mobileSidebarSlice";
 import { useAppDispatch } from "@/hooks/useAppDispatch";
 import { motion } from "framer-motion";
+import Logout from "@/components/illustrations/icons/Logout/Logout";
 
 const MobileSidebar: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -215,6 +216,8 @@ const MobileSidebar: React.FC = () => {
           <LinksWrapper header="CUSTOMERS" data={data1} />
           <LinksWrapper header="BUSINESSES" data={data2} />
           <LinksWrapper header="SETTINGS" data={data3} />
+          <hr className={styles.hr} />
+          <LinkItem icon={<Logout />} text="Logout" href="/" />
         </div>
       </motion.div>
       <div

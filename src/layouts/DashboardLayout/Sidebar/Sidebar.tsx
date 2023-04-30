@@ -24,6 +24,7 @@ import Reports from "@/components/illustrations/icons/Reports/Reports";
 import Preferences from "@/components/illustrations/icons/Preferences/Preferences";
 import Pricing from "@/components/illustrations/icons/Pricing/Pricing";
 import Audit from "@/components/illustrations/icons/Audit/Audit";
+import Logout from "@/components/illustrations/icons/Logout/Logout";
 
 const Sidebar: React.FC = () => {
   const data1 = [
@@ -149,6 +150,8 @@ const Sidebar: React.FC = () => {
         <LinksWrapper header="CUSTOMERS" data={data1} />
         <LinksWrapper header="BUSINESSES" data={data2} />
         <LinksWrapper header="SETTINGS" data={data3} />
+        <hr className={styles.hr} />
+        <LinkItem icon={<Logout />} text="Logout" href="/" />
       </div>
     </div>
   );

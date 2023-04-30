@@ -11,7 +11,7 @@ interface Props {
 
 const LinkItem: React.FC<Props> = ({ icon, text, href }) => {
   const path = useRouter().pathname;
-  const isActive = path.includes(href);
+  const isActive = path === href;
 
   return (
     <Link className={styles.link} href={href}>
