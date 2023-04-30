@@ -6,12 +6,10 @@
 }
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 1.875rem;
 }
 .wrapper4 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1.875rem;
 }
 .label {
@@ -23,4 +21,29 @@
 .value {
   color: #545f7d;
   font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .wrapper4 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 992px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .wrapper4 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .wrapper4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

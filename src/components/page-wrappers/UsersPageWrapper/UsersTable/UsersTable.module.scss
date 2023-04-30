@@ -21,3 +21,21 @@
   color: #545f7d !important;
   //Prevent text from wrapping
 }
+.hiddenField {
+  display: none;
+}
+.hiddenField2 {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hiddenField2 {
+    display: table-cell;
+  }
+}
+
+@media (min-width: 1300px) {
+  .hiddenField {
+    display: table-cell;
+  }
+}

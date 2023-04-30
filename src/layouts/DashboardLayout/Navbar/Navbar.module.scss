@@ -1,17 +1,17 @@
 $cyan: #39cdcc;
 .container {
   height: 100%;
-  padding: 0 3.75rem;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #213f7d;
 }
 .searchWrapper {
+  display: none;
   width: 100%;
   max-width: 25rem;
   height: 2.5rem;
-  display: flex;
 }
 .input {
   flex: 1;
@@ -33,5 +33,27 @@ $cyan: #39cdcc;
   align-items: center;
 }
 .link {
+  display: none;
   color: #213f7d;
+}
+.burger {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .link {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 0 3.75rem;
+  }
+  .searchWrapper {
+    display: flex;
+  }
+  .burger {
+    display: none;
+  }
 }

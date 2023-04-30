@@ -5,10 +5,14 @@ import Search from "@/components/illustrations/icons/Search/Search";
 import Bell from "@/components/illustrations/icons/Bell/Bell";
 import Link from "next/link";
 import ProfileDropdown from "@/components/shared/ProfileDropdown/ProfileDropdown";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar: React.FC = () => {
   return (
     <div className={styles.container}>
+      <div className={styles.burger}>
+        <RxHamburgerMenu />
+      </div>
       <div className={styles.searchWrapper}>
         <div className={styles.input}>
           <TextInput

@@ -18,10 +18,11 @@
 }
 .btns {
   display: flex;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 .btn {
-  width: 10.626rem;
+  width: 100vw;
+  max-width: 10.626rem;
   height: 2.5rem;
   border: none;
   border-radius: 0.5rem;
@@ -40,6 +41,12 @@
 }
 .overview {
   margin-bottom: 1.875rem;
+}
+
+@media (min-width: 768px) {
+  .btns {
+    gap: 1.25rem;
+  }
 }
 
 @media (min-width: 992px) {

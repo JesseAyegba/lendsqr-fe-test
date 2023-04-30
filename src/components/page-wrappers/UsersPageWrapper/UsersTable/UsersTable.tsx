@@ -12,12 +12,36 @@ const UsersTable: React.FC = () => {
   const dispatch = useAppDispatch();
   const users = useAppSelector((state) => state.users.data);
   const headers = [
-    "ORGANIZATION",
-    "USERNAME",
-    "EMAIL",
-    "PHONE NUMBER",
-    "DATE JOINED",
-    "STATUS",
+    {
+      text: "ORGANIZATION",
+      isHidden: true,
+      isHidden2: false,
+    },
+    {
+      text: "USERNAME",
+      isHidden: false,
+      isHidden2: false,
+    },
+    {
+      text: "EMAIL",
+      isHidden: true,
+      isHidden2: false,
+    },
+    {
+      text: "PHONE NUMBER",
+      isHidden: true,
+      isHidden2: false,
+    },
+    {
+      text: "DATE JOINED",
+      isHidden: false,
+      isHidden2: true,
+    },
+    {
+      text: "STATUS",
+      isHidden: false,
+      isHidden2: false,
+    },
   ];
 
   useEffect(() => {
@@ -41,9 +65,14 @@ const UsersTable: React.FC = () => {
           <tr>
             {headers.map((text) => {
               return (
-                <th key={text}>
+                <th
+                  className={`${text.isHidden && styles.hiddenField} ${
+                    text.isHidden2 && styles.hiddenField2
+                  } }`}
+                  key={text.text}
+                >
                   <div className={styles.header}>
-                    <span>{text}</span>
+                    <span>{text.text}</span>
                     <span className={styles.funnel}>
                       <Funnel />
                     </span>
@@ -61,13 +90,19 @@ const UsersTable: React.FC = () => {
               new Date(user.createdAt) > new Date() ? "Pending" : "Active";
             return (
               <tr key={user.id}>
-                <td className={styles.body}>Lendsqr</td>
-                <td className={styles.body}>
+                <td className={`${styles.body} ${styles.hiddenField}`}>
+                  Lendsqr
+                </td>
+                <td className={`${styles.body}`}>
                   {user.profile.firstName} {user.profile.lastName}
                 </td>
-                <td className={styles.body}>{user.email}</td>
-                <td className={styles.body}>{user.phoneNumber}</td>
-                <td className={styles.body}>
+                <td className={`${styles.body} ${styles.hiddenField}`}>
+                  {user.email}
+                </td>
+                <td className={`${styles.body} ${styles.hiddenField}`}>
+                  {user.phoneNumber}
+                </td>
+                <td className={`${styles.body} ${styles.hiddenField2}`}>
                   {new Date(user.createdAt).toDateString()}{" "}
                   {/* {new Date(user.createdAt).toLocaleTimeString()} */}
                 </td>

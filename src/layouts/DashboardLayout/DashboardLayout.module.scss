@@ -5,6 +5,7 @@ $dash-bg: #fbfbfb;
   display: flex;
 }
 .sidebarWrapper {
+  display: none;
   flex: 1;
   height: 100%;
   max-width: 17.7rem;
@@ -24,5 +25,14 @@ $dash-bg: #fbfbfb;
   background-color: $dash-bg;
 }
 .main {
-  padding: 3.75rem 3.75rem;
+  padding: 3.75rem 1rem;
+}
+
+@media (min-width: 992px) {
+  .sidebarWrapper {
+    display: block;
+  }
+  .main {
+    padding: 3.75rem 3.75rem;
+  }
 }
