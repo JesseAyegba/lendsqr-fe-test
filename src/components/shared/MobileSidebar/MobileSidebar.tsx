@@ -28,6 +28,7 @@ import { hideMobileSidebar } from "@/store/slices/mobileSidebar/mobileSidebarSli
 import { useAppDispatch } from "@/hooks/useAppDispatch";
 import { motion } from "framer-motion";
 import Logout from "@/components/illustrations/icons/Logout/Logout";
+import Messages from "@/components/illustrations/icons/Messages/Messages";
 
 const MobileSidebar: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -134,6 +135,11 @@ const MobileSidebar: React.FC = () => {
     {
       icon: <Audit />,
       text: "Audit Logs",
+      href: "#",
+    },
+    {
+      icon: <Messages />,
+      text: "Systems Messages",
       href: "#",
     },
   ];

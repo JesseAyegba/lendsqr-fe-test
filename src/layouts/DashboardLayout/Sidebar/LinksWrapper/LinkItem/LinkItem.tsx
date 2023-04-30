@@ -21,6 +21,7 @@ const LinkItem: React.FC<Props> = ({ icon, text, href }) => {
         <div
           style={{
             opacity: isActive ? 1 : 0.5,
+            marginTop: "4px",
           }}
         >
           {icon}

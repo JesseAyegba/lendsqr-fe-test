@@ -11,7 +11,7 @@ const DropdownLink: React.FC<Props> = ({ icon, text }) => {
   return (
     <button className={styles.btn}>
       <div className={`${styles.container} `}>
-        <div>{icon}</div>
+        <div style={{ marginTop: "4px" }}>{icon}</div>
         <div>{text}</div>
         <svg
           width="14"

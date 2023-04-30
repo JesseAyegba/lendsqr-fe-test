@@ -25,6 +25,7 @@ import Preferences from "@/components/illustrations/icons/Preferences/Preference
 import Pricing from "@/components/illustrations/icons/Pricing/Pricing";
 import Audit from "@/components/illustrations/icons/Audit/Audit";
 import Logout from "@/components/illustrations/icons/Logout/Logout";
+import Messages from "@/components/illustrations/icons/Messages/Messages";
 
 const Sidebar: React.FC = () => {
   const data1 = [
@@ -131,6 +132,11 @@ const Sidebar: React.FC = () => {
     {
       icon: <Audit />,
       text: "Audit Logs",
+      href: "#",
+    },
+    {
+      icon: <Messages />,
+      text: "Systems Messages",
       href: "#",
     },
   ];
