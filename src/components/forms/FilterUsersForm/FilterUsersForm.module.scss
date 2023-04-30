@@ -1,0 +1,36 @@
+.container {
+  background-color: white;
+  border-radius: 0.25rem;
+  border: 1px solid #f2f2f6;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+  width: 16.875rem;
+  padding: 1.875rem 1.25rem;
+  display: grid;
+  gap: 1.25rem;
+}
+.label {
+  color: #545f7d;
+}
+
+.btns {
+  display: flex;
+  gap: 0.875rem;
+  margin-top: 0.5rem;
+}
+.btn {
+  width: 98px;
+  height: 40px;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+}
+.btnReset {
+  background-color: white;
+  color: #545f7d;
+  border: 1px solid #545f7d;
+}
+.btnFilter {
+  background-color: #39cdcc;
+  color: white;
+}
