@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Sidebar.module.scss";
+import React, { useEffect } from "react";
+import styles from "./MobileSidebar.module.scss";
 import SmallBrandLogo from "@/components/illustrations/other/SmallBrandLogo/SmallBrandLogo";
 import LinksWrapper from "./LinksWrapper/LinksWrapper";
 import Users from "@/components/illustrations/icons/Users/Users";
@@ -24,8 +24,12 @@ import Reports from "@/components/illustrations/icons/Reports/Reports";
 import Preferences from "@/components/illustrations/icons/Preferences/Preferences";
 import Pricing from "@/components/illustrations/icons/Pricing/Pricing";
 import Audit from "@/components/illustrations/icons/Audit/Audit";
+import { hideMobileSidebar } from "@/store/slices/mobileSidebar/mobileSidebarSlice";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { motion } from "framer-motion";
 
-const Sidebar: React.FC = () => {
+const MobileSidebar: React.FC = () => {
+  const dispatch = useAppDispatch();
   const data1 = [
     {
       icon: <Users />,
@@ -115,7 +119,6 @@ const Sidebar: React.FC = () => {
       href: "#",
     },
   ];
-
   const data3 = [
     {
       icon: <Preferences />,
@@ -133,25 +136,93 @@ const Sidebar: React.FC = () => {
       href: "#",
     },
   ];
+  const variants = {
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.2,
+      },
+    },
+  };
+
+  const handleResize = () => {
+    if (window.innerWidth >= 992) {
+      dispatch(hideMobileSidebar());
+    }
+  };
+
+  // Listen for window resize when sidebar is open
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup - remove event listener when sidebar is closed
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   return (
-    <div className={styles.container}>
-      <div className={styles.logoWrapper}>
-        <SmallBrandLogo />
-      </div>
-      <div className={styles.linksWrapper}>
-        <div>
-          <DropdownLink icon={<Organization />} text="Search Organization" />
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: {
+          opacity: 0,
+        },
+        visible: {
+          opacity: 1,
+          transition: {
+            duration: 0.3,
+          },
+        },
+      }}
+      exit={{
+        opacity: 0,
+        transition: {
+          duration: 0.1,
+        },
+      }}
+      className={styles.containerWrapper}
+    >
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={variants}
+        exit={{
+          opacity: 0,
+          x: -1000,
+          transition: {
+            duration: 0.3,
+          },
+        }}
+        className={styles.container}
+      >
+        <div className={styles.logoWrapper}>
+          <SmallBrandLogo />
         </div>
-        <div>
-          <LinkItem icon={<Home />} text="Dashboard" href="#" />
+        <div className={styles.linksWrapper}>
+          <div>
+            <DropdownLink icon={<Organization />} text="Search Organization" />
+          </div>
+          <div>
+            <LinkItem icon={<Home />} text="Dashboard" href="#" />
+          </div>
+          <LinksWrapper header="CUSTOMERS" data={data1} />
+          <LinksWrapper header="BUSINESSES" data={data2} />
+          <LinksWrapper header="SETTINGS" data={data3} />
         </div>
-        <LinksWrapper header="CUSTOMERS" data={data1} />
-        <LinksWrapper header="BUSINESSES" data={data2} />
-        <LinksWrapper header="SETTINGS" data={data3} />
-      </div>
-    </div>
+      </motion.div>
+      <div
+        onClick={() => dispatch(hideMobileSidebar())}
+        className={styles.overlay}
+      ></div>
+    </motion.div>
   );
 };
 
-export default Sidebar;
+export default MobileSidebar;

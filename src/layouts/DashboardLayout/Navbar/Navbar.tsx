@@ -6,12 +6,19 @@ import Bell from "@/components/illustrations/icons/Bell/Bell";
 import Link from "next/link";
 import ProfileDropdown from "@/components/shared/ProfileDropdown/ProfileDropdown";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { showMobileSidebar } from "@/store/slices/mobileSidebar/mobileSidebarSlice";
 
 const Navbar: React.FC = () => {
+  const dispatch = useAppDispatch();
   return (
     <div className={styles.container}>
       <div className={styles.burger}>
-        <RxHamburgerMenu />
+        <RxHamburgerMenu
+          onClick={() => {
+            dispatch(showMobileSidebar());
+          }}
+        />
       </div>
       <div className={styles.searchWrapper}>
         <div className={styles.input}>
